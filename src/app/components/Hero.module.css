@@ -1,0 +1,657 @@
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(42, 100, 233, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(42, 100, 233, 0.07) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(180deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
+}
+
+.portrait {
+  position: absolute;
+  right: -2%;
+  bottom: 0;
+  width: min(48vw, 640px);
+  height: min(92vh, 920px);
+  z-index: 5;
+  pointer-events: none;
+  animation: slideUp 1s cubic-bezier(0.16,1,0.3,1) 0.2s both;
+}
+
+.portraitImage {
+  object-fit: contain;
+  object-position: center bottom;
+  filter: drop-shadow(0 24px 48px rgba(26, 49, 105, 0.18));
+}
+
+.body {
+  position: relative;
+  z-index: auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 110px var(--hero-pad) 48px;
+  width: 100%;
+  min-height: inherit;
+}
+
+.copy {
+  max-width: min(92vw, 1100px);
+  animation: slideUp 0.9s cubic-bezier(0.16,1,0.3,1) 0.15s both;
+  position: relative;
+  z-index: auto;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 12px;
+  width: min(100%, 1040px);
+  margin-inline: auto;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 6;
+  animation: slideUp 0.9s cubic-bezier(0.16,1,0.3,1) 0.35s both;
+}
+
+@media (min-width: 769px) {
+  .body {
+    padding-top: 96px;
+  }
+
+  .copy {
+    margin-top: auto;
+    margin-bottom: clamp(120px, 13vh, 148px);
+    transform: translateY(-20px);
+  }
+
+  /* Home-only layout: title slightly below service pills, badges to the left */
+  .home .copy {
+    margin-bottom: clamp(156px, 18vh, 228px);
+    transform: translateY(-40px);
+  }
+
+  .home .headline {
+    font-size: clamp(36px, 5vw, 68px);
+    line-height: 0.98;
+    max-width: min(16ch, 58vw);
+  }
+
+  .glassCells {
+    z-index: 6;
+  }
+}
+
+.headline {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(56px, 9vw, 118px);
+  line-height: 0.92;
+  color: var(--color-bg);
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  max-width: none;
+  position: relative;
+  z-index: 2;
+}
+
+.headline em {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-style: normal;
+  color: var(--color-accent);
+  letter-spacing: -0.01em;
+}
+
+.role {
+  margin-top: 20px;
+  max-width: min(38ch, 40vw);
+  font-family: var(--font-sans);
+  font-size: clamp(16px, 1.6vw, 20px);
+  line-height: 1.55;
+  color: #4a5568;
+  font-weight: 500;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 6;
+}
+
+.glassCells {
+  position: absolute;
+  inset: 0;
+  z-index: 8;
+  pointer-events: none;
+}
+
+.glassCard {
+  position: absolute;
+  pointer-events: auto;
+  padding: 16px 18px 14px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.58);
+  border: 1px solid rgba(42, 100, 233, 0.16);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow:
+    0 16px 40px rgba(26, 49, 105, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.65);
+  animation: slideUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.45s both;
+}
+
+.glassOrb {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(42, 100, 233, 0.12);
+  box-shadow: 0 4px 12px rgba(26, 49, 105, 0.08);
+}
+
+.glassRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-right: 28px;
+}
+
+.glassValue {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 3.2vw, 46px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--color-bg);
+  white-space: nowrap;
+}
+
+.glassMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: 0.01em;
+  color: rgba(15, 15, 15, 0.58);
+  text-transform: lowercase;
+}
+
+.glassLeft {
+  left: clamp(12px, 5vw, 72px);
+  bottom: clamp(48px, 10vh, 112px);
+  width: min(230px, 30vw);
+}
+
+.glassMid {
+  left: 50%;
+  right: auto;
+  top: auto;
+  bottom: clamp(56px, 6.5vh, 80px);
+  transform: translateX(-50%);
+  width: min(270px, 34vw);
+  z-index: 11;
+}
+
+.glassRight {
+  right: clamp(16px, 4vw, 72px);
+  bottom: clamp(128px, 16vh, 200px);
+  width: min(210px, 28vw);
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: var(--radius-pill);
+  padding: 12px 14px 12px 20px;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--color-bg);
+  transition: transform 0.22s cubic-bezier(0.16,1,0.3,1), box-shadow 0.22s, background 0.25s, color 0.25s;
+  box-shadow: 0 8px 24px rgba(26, 49, 105, 0.12);
+  border: 1px solid rgba(42, 100, 233, 0.12);
+  flex: 0 1 188px;
+  width: 188px;
+  max-width: 100%;
+  backdrop-filter: blur(8px);
+  box-sizing: border-box;
+}
+.card:hover {
+  transform: translateY(-2px);
+  background: var(--card-accent);
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 10px 28px var(--card-shadow);
+}
+
+.cardBlue {
+  --card-accent: #2a64e9;
+  --card-shadow: rgba(42, 100, 233, 0.4);
+}
+.cardTeal {
+  --card-accent: #1cbc27;
+  --card-shadow: rgba(28, 188, 39, 0.35);
+}
+.cardIndigo {
+  --card-accent: #1a3169;
+  --card-shadow: rgba(26, 49, 105, 0.45);
+}
+.cardSky {
+  --card-accent: #2357dc;
+  --card-shadow: rgba(35, 87, 220, 0.4);
+}
+.cardOrange {
+  --card-accent: #e87a2e;
+  --card-shadow: rgba(232, 122, 46, 0.4);
+}
+.cardGreen {
+  --card-accent: #1a3169;
+  --card-shadow: rgba(26, 49, 105, 0.45);
+}
+
+.cardTitle {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-bg);
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  white-space: nowrap;
+  transition: color 0.25s;
+}
+
+.card:hover .cardTitle {
+  color: #fff;
+}
+
+.cardArrow {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: var(--card-accent);
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.25s, color 0.25s, transform 0.2s;
+  box-shadow: 0 3px 10px var(--card-shadow);
+}
+.card:hover .cardArrow {
+  background: #fff;
+  color: var(--card-accent);
+  transform: rotate(45deg);
+}
+
+@media (min-width: 1100px) {
+  /* One balanced row of five on wide screens */
+  .cards {
+    flex-wrap: nowrap;
+    width: fit-content;
+    max-width: min(100%, 1080px);
+  }
+
+  .card {
+    flex: 0 1 auto;
+    width: auto;
+    min-width: 168px;
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 1099px) and (min-width: 769px) {
+  /* 3 + 2 centered */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    width: min(100%, 640px);
+    gap: 10px 12px;
+  }
+
+  .card {
+    width: auto;
+    max-width: none;
+    flex: none;
+    grid-column: span 2;
+  }
+
+  .card:nth-child(4) {
+    grid-column: 2 / span 2;
+  }
+
+  .card:nth-child(5) {
+    grid-column: 4 / span 2;
+  }
+}
+
+@media (max-width: 980px) {
+  .body {
+    gap: 20px;
+  }
+
+  .portrait {
+    right: 0;
+    width: min(46vw, 520px);
+    height: min(85vh, 780px);
+  }
+}
+
+@media (max-width: 768px) {
+  /* min-height only — fixed 100svh + overflow:hidden was clipping glass badges */
+  .hero {
+    min-height: 100svh;
+    min-height: 100dvh;
+    height: auto;
+    max-height: none;
+    overflow-x: clip;
+    overflow-y: visible;
+  }
+
+  .portrait {
+    right: -8%;
+    width: min(78vw, 400px);
+    height: min(68vh, 520px);
+    opacity: 0.95;
+    z-index: 5;
+  }
+
+  .body {
+    justify-content: flex-start;
+    flex: none;
+    min-height: 100svh;
+    min-height: 100dvh;
+    padding: 88px var(--hero-pad) max(28px, calc(18px + env(safe-area-inset-bottom)));
+    gap: 0;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+    margin-top: 12px;
+    gap: 8px;
+  }
+
+  .card {
+    width: auto;
+    max-width: none;
+    flex: none;
+    padding: 12px 12px 12px 16px;
+    gap: 10px;
+  }
+
+  /* Last odd card centered under the 2×2 */
+  .card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    width: min(100%, 220px);
+    justify-self: center;
+  }
+
+  .cardTitle { font-size: 15px; }
+  .cardArrow {
+    width: 30px;
+    height: 30px;
+  }
+  .cardArrow svg { width: 12px; height: 12px; }
+
+  .copy {
+    margin-top: 28px;
+    max-width: 58%;
+    position: relative;
+    z-index: auto;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .headline {
+    font-size: clamp(42px, 12.5vw, 64px);
+    line-height: 0.94;
+  }
+
+  .home .headline {
+    font-size: clamp(32px, 9.5vw, 48px);
+    line-height: 0.98;
+  }
+
+  .role {
+    margin-top: 12px;
+    font-size: 16px;
+    line-height: 1.45;
+    max-width: 42vw;
+    width: auto;
+    box-sizing: border-box;
+  }
+
+  .glassCells {
+    position: relative;
+    inset: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 6px;
+    width: min(72%, 200px);
+    max-width: 200px;
+    margin-top: auto;
+    padding-top: 12px;
+    padding-bottom: 2px; 
+    z-index: 6;
+    align-self: flex-start;
+    flex-shrink: 0;
+  }
+
+  .glassCard {
+    position: relative;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    width: 100%;
+    max-width: none;
+    padding: 8px 10px 7px;
+    border-radius: 12px;
+    backface-visibility: hidden;
+  }
+
+  .glassOrb {
+    top: 7px;
+    right: 7px;
+    width: 14px;
+    height: 14px;
+  }
+
+  .glassRow {
+    gap: 8px;
+    padding-right: 16px;
+  }
+
+  .glassValue {
+    font-size: 18px;
+  }
+
+  .glassMeta {
+    font-size: 10px;
+    gap: 0;
+    line-height: 1.15;
+  }
+
+  .glassLeft,
+  .glassMid,
+  .glassRight {
+    justify-self: stretch;
+  }
+}
+
+@media (max-width: 480px) {
+  .portrait {
+    right: -10%;
+    width: min(84vw, 380px);
+    height: min(58vh, 480px);
+    opacity: 0.92;
+  }
+
+  .cards {
+    margin-top: 16px;
+  }
+
+  .copy {
+    margin-top: 24px;
+    max-width: 56%;
+  }
+
+  .role {
+    max-width: 40vw;
+    font-size: 15px;
+  }
+
+  .headline {
+    font-size: clamp(40px, 12vw, 56px);
+  }
+
+  .glassCells {
+    width: min(70%, 180px);
+    max-width: 180px;
+    gap: 5px;
+  }
+
+  .glassValue {
+    font-size: 16px;
+  }
+
+  .glassMeta {
+    font-size: 9px;
+  }
+
+  .card {
+    padding: 11px 11px 11px 15px;
+  }
+
+  .cardTitle { font-size: 14px; }
+}
+
+/* Short mobile viewports: keep badges fully visible by tightening layout */
+@media (max-width: 768px) and (max-height: 740px) {
+  .body {
+    padding-top: 76px;
+    padding-bottom: max(20px, calc(12px + env(safe-area-inset-bottom)));
+  }
+
+  .cards {
+    margin-top: 8px;
+  }
+
+  .copy {
+    margin-top: 16px;
+    flex: 0 1 auto;
+  }
+
+  .role {
+    margin-top: 8px;
+    font-size: 14px;
+    max-width: 38vw;
+  }
+
+  .glassCells {
+    gap: 5px;
+    padding-top: 10px;
+    padding-bottom: 2px;
+  }
+
+  .glassCard {
+    padding: 7px 9px 6px;
+  }
+
+  .glassValue {
+    font-size: 16px;
+  }
+
+  .glassMeta {
+    font-size: 9px;
+  }
+
+  .glassOrb {
+    width: 12px;
+    height: 12px;
+    top: 6px;
+    right: 6px;
+  }
+}
+
+@media (max-width: 768px) and (max-height: 640px) {
+  .headline {
+    font-size: clamp(34px, 10vw, 48px);
+  }
+
+  .card {
+    padding: 10px 10px 10px 14px;
+  }
+
+  .cardTitle {
+    font-size: 13px;
+  }
+
+  .cardArrow {
+    width: 26px;
+    height: 26px;
+  }
+
+  .glassCells {
+    gap: 4px;
+    width: min(68%, 170px);
+  }
+}
+
+@media (min-width: 769px) {
+  .glassLeft {
+    left: clamp(12px, 5vw, 72px);
+    bottom: clamp(28px, 4vh, 44px);
+    width: min(220px, 28vw);
+    z-index: 6;
+  }
+
+  .glassMid {
+    left: 50%;
+    right: auto;
+    top: auto;
+    bottom: clamp(56px, 6.5vh, 80px);
+    transform: translateX(-50%);
+    width: min(270px, 34vw);
+    z-index: 11;
+  }
+
+  .glassRight {
+    z-index: 11;
+  }
+
+  .home .glassMid {
+    left: clamp(200px, 26vw, 360px);
+    transform: none;
+  }
+
+  .home .glassRight {
+    left: clamp(360px, 44vw, 560px);
+    right: auto;
+    bottom: clamp(128px, 16vh, 200px);
+    width: min(210px, 28vw);
+  }
+}

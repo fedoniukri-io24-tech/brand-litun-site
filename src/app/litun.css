@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap');
+
+/* On :root so portals (modals) outside .litun still get brand tokens */
+:root {
+  /* Brand book — «Особистий консалтинг» */
+  --color-bg: #0f0f0f;
+  --color-bg-secondary: #171617;
+  --color-accent: #2a64e9;
+  --color-accent-hover: #2357dc;
+  --color-accent-dark: #1a3169;
+  --color-light-card: #d4ddfa;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #8c8c8c;
+  --color-success: #1cbc27;
+  --color-warning: #d2494b;
+
+  /* Aliases used across components */
+  --ink: #0f0f0f;
+  --navy: #171617;
+  --mist: #d4ddfa;
+  --stone: #8c8c8c;
+  --blue: #2a64e9;
+  --blue-deep: #2357dc;
+  --blue-soft: #d4ddfa;
+  --orange: var(--blue);
+  --orange-deep: var(--blue-deep);
+  --orange-soft: var(--blue-soft);
+  --white: #ffffff;
+  --black: #0f0f0f;
+  /* Side inset: sections / nav / footer. Heroes keep --hero-pad. */
+  --page-pad: 88px;
+  --page-pad-sm: 24px;
+  --hero-pad: 64px;
+  --radius: 20px;
+  --radius-sm: 12px;
+  --radius-pill: 999px;
+  --font-sans: 'Manrope', sans-serif;
+  --font-display: 'Oswald', sans-serif;
+  --font-accent: 'Oswald', sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.litun {
+  font-family: var(--font-sans);
+  color: var(--color-bg);
+  background: #fff;
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --page-pad: var(--page-pad-sm);
+    --hero-pad: var(--page-pad-sm);
+  }
+}
+
+.litunSky {
+  position: relative;
+  isolation: isolate;
+  overflow-x: hidden;
+  background:
+    radial-gradient(ellipse 70% 40% at 78% 28%, rgba(42, 100, 233, 0.26), transparent 60%),
+    radial-gradient(ellipse 50% 35% at 12% 12%, rgba(255, 255, 255, 0.92), transparent 55%),
+    radial-gradient(ellipse 55% 40% at 10% 72%, rgba(212, 221, 250, 0.75), transparent 58%),
+    radial-gradient(ellipse 50% 35% at 88% 88%, rgba(42, 100, 233, 0.14), transparent 55%),
+    linear-gradient(180deg, #ffffff 0%, #e8efff 28%, #d4ddfa 58%, #c8d6f5 78%, #d4ddfa 100%);
+}
+
+.litunSkyMint {
+  position: relative;
+  isolation: isolate;
+  overflow-x: hidden;
+  background:
+    radial-gradient(ellipse 70% 40% at 78% 28%, rgba(28, 188, 39, 0.18), transparent 60%),
+    radial-gradient(ellipse 50% 35% at 12% 12%, rgba(255, 255, 255, 0.94), transparent 55%),
+    radial-gradient(ellipse 55% 40% at 10% 72%, rgba(210, 236, 214, 0.8), transparent 58%),
+    radial-gradient(ellipse 50% 35% at 88% 88%, rgba(28, 188, 39, 0.1), transparent 55%),
+    linear-gradient(180deg, #ffffff 0%, #eef8ef 28%, #d8edd9 58%, #c8e6cb 78%, #d8edd9 100%);
+}
+
+.litunSkyNavy {
+  position: relative;
+  isolation: isolate;
+  overflow-x: hidden;
+  background:
+    radial-gradient(ellipse 65% 45% at 85% 20%, rgba(42, 100, 233, 0.35), transparent 58%),
+    radial-gradient(ellipse 50% 40% at 8% 80%, rgba(26, 49, 105, 0.55), transparent 55%),
+    radial-gradient(ellipse 40% 30% at 20% 10%, rgba(91, 138, 242, 0.16), transparent 50%),
+    linear-gradient(165deg, #0f1a38 0%, #122047 38%, #1a3169 72%, #152952 100%);
+}
+
+.litunSkyDeep {
+  position: relative;
+  isolation: isolate;
+  overflow-x: hidden;
+  background:
+    radial-gradient(ellipse 70% 42% at 80% 26%, rgba(26, 49, 105, 0.42), transparent 58%),
+    radial-gradient(ellipse 50% 35% at 12% 10%, rgba(210, 220, 245, 0.55), transparent 55%),
+    radial-gradient(ellipse 55% 42% at 8% 78%, rgba(140, 162, 220, 0.72), transparent 58%),
+    radial-gradient(ellipse 48% 36% at 90% 90%, rgba(26, 49, 105, 0.32), transparent 55%),
+    linear-gradient(180deg, #d7dff2 0%, #b7c5e8 26%, #8fa3d4 55%, #6f87c4 78%, #8499cf 100%);
+}
+
+.litunSkyOrange {
+  position: relative;
+  isolation: isolate;
+  overflow-x: hidden;
+  background:
+    radial-gradient(ellipse 70% 40% at 78% 28%, rgba(232, 122, 46, 0.3), transparent 60%),
+    radial-gradient(ellipse 50% 35% at 12% 12%, rgba(255, 255, 255, 0.94), transparent 55%),
+    radial-gradient(ellipse 55% 40% at 10% 72%, rgba(255, 214, 180, 0.82), transparent 58%),
+    radial-gradient(ellipse 50% 35% at 88% 88%, rgba(232, 122, 46, 0.16), transparent 55%),
+    linear-gradient(180deg, #ffffff 0%, #fff3ea 28%, #ffdfc4 58%, #ffd0a8 78%, #ffdfc4 100%);
+}
+
+.litunSkyForest {
+  position: relative;
+  isolation: isolate;
+  overflow-x: hidden;
+  background:
+    radial-gradient(ellipse 70% 42% at 78% 26%, rgba(31, 107, 74, 0.34), transparent 60%),
+    radial-gradient(ellipse 50% 35% at 12% 10%, rgba(244, 239, 230, 0.9), transparent 55%),
+    radial-gradient(ellipse 55% 40% at 8% 78%, rgba(169, 196, 176, 0.7), transparent 58%),
+    radial-gradient(ellipse 48% 36% at 90% 88%, rgba(15, 51, 38, 0.2), transparent 55%),
+    linear-gradient(180deg, #f4efe6 0%, #e7e0d4 28%, #d5d0b8 58%, #b7c7b4 78%, #c9d4c2 100%);
+}
+
+.litunBand {
+  background: transparent;
+}
+
+.homeMission {
+  padding: clamp(56px, 8vw, 112px) var(--page-pad);
+  color: var(--color-bg);
+  overflow-x: clip;
+  background: #fff;
+}
+
+.homeMissionInner {
+  width: 100%;
+  max-width: 820px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.homeMissionQuote {
+  margin: 0 0 22px;
+  font-family: var(--font-display);
+  font-size: clamp(26px, 3.6vw, 44px);
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1.22;
+  letter-spacing: 0.01em;
+  color: var(--color-accent-dark);
+}
+
+.homeMissionLead {
+  margin: 0 auto;
+  max-width: 48ch;
+  font-size: clamp(16px, 1.6vw, 19px);
+  line-height: 1.6;
+  font-weight: 500;
+  color: rgba(20, 20, 20, 0.62);
+}
+
+@media (max-width: 768px) {
+  .homeMission {
+    padding: 48px var(--page-pad) 56px;
+  }
+
+  .homeMissionQuote {
+    margin-bottom: 16px;
+  }
+}
+
+/* Desktop rhythm: text + photo split blocks (consulting, club, strat, consultation) */
+@media (min-width: 901px) {
+  .splitMedia {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(300px, 380px);
+    gap: clamp(32px, 4vw, 56px);
+    align-items: stretch;
+    max-width: 1080px;
+    margin-inline: auto;
+  }
+
+  .splitMediaCopy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 18px;
+    min-height: 100%;
+  }
+
+  .splitMediaPhotoWrap {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    min-height: 100%;
+  }
+
+  .splitMediaPhoto {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: clamp(420px, 38vw, 520px);
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+  }
+
+  .splitMediaPhotoImg {
+    object-fit: cover;
+    object-position: center top;
+  }
+}
+
+@media (max-width: 900px) {
+  .splitMediaCopy {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+}

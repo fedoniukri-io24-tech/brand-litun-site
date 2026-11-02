@@ -111,14 +111,17 @@ export const BRAND_COURSE = {
   },
   tariffs: {
     title: 'Тарифи',
-    lead: 'Можлива розстрочка до 4 місяців',
+    lead: 'Ціна для тих, хто заповнив анкету передзапису. Можлива розстрочка до 4 місяців',
     /** Однакова кнопка бронювання для обох тарифів / сайтів */
     bookHref: 'https://secure.wayforpay.com/button/b21521eb17c43',
     items: [
       {
         name: 'Груповий',
         seats: '20 місць',
-        price: '23.990 грн',
+        /** Закреслена звичайна ціна */
+        priceWas: '23.990 грн',
+        /** Ціна після анкети передзапису */
+        price: '19.990 грн',
         featured: false,
         features: [
           'Програма з 8 модулів та 38 уроків',
@@ -130,14 +133,15 @@ export const BRAND_COURSE = {
           'Фінальний проєкт',
         ],
         cta: 'Купити навчання',
-        buyHref: 'https://secure.wayforpay.com/payment/sd6177c4a65a1',
+        buyHref: 'https://secure.wayforpay.com/payment/s4a5e0b25984b',
         secondaryCta: 'Забронювати місце',
         askCta: 'Задати питання',
       },
       {
         name: 'Персональний',
         seats: '5 місць',
-        price: '64.990 грн',
+        priceWas: '64.990 грн',
+        price: '60.990 грн',
         featured: true,
         features: [
           'Все що є в тарифі «Груповий» і додатково:',
@@ -149,7 +153,7 @@ export const BRAND_COURSE = {
           'Одна групова офлайн зустріч з усіма учасниками персонального тарифу',
         ],
         cta: 'Купити навчання',
-        buyHref: 'https://secure.wayforpay.com/payment/s8117ee151c74',
+        buyHref: 'https://secure.wayforpay.com/payment/s71531bfa4317',
         secondaryCta: 'Забронювати місце',
         askCta: 'Задати питання',
       },

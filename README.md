@@ -21,8 +21,8 @@ npm run dev
 | `TELEGRAM_BOT_TOKEN` | Bot token |
 | `TELEGRAM_CHAT_ID` | Chat for leads / questions |
 
-## Payments (WayForPay)
+## Payments (WayForPay) — pre-registration prices
 
 - Book seat (shared): `https://secure.wayforpay.com/button/b21521eb17c43`
-- Group full: `https://secure.wayforpay.com/payment/sd6177c4a65a1`
-- Personal full: `https://secure.wayforpay.com/payment/s8117ee151c74`
+- Group (19.990): `https://secure.wayforpay.com/payment/s4a5e0b25984b`
+- Personal (60.990): `https://secure.wayforpay.com/payment/s71531bfa4317`

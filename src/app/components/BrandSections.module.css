@@ -243,6 +243,26 @@
   color: rgba(255, 255, 255, 0.7);
 }
 
+.tariffPriceBlock {
+  display: grid;
+  gap: 6px;
+}
+
+.tariffPriceWas {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(20px, 2.2vw, 26px);
+  font-weight: 600;
+  line-height: 1;
+  color: rgba(15, 15, 15, 0.42);
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+}
+
+.tariffFeatured .tariffPriceWas {
+  color: rgba(255, 255, 255, 0.55);
+}
+
 .tariffPrice {
   margin: 0;
   font-family: var(--font-display);

@@ -4,8 +4,8 @@ import { BRAND_COURSE } from './data/course'
 export const SITE = {
   name: 'Ілля Літун',
   brand: 'TURBO EDUCATION',
-  title: 'Освітній бренд для викладача — курс Іллі Літуна',
-  shortTitle: 'Освітній бренд',
+  title: 'Особистий бренд для викладача — курс Іллі Літуна',
+  shortTitle: 'Особистий бренд',
   description: BRAND_COURSE.hero.lead,
   locale: 'uk_UA',
   language: 'uk',
@@ -15,8 +15,8 @@ export const SITE = {
   image: '/images/brand-hero.png',
   twitter: '@illya_litun',
   keywords: [
-    'освітній бренд викладача',
     'особистий бренд викладача',
+    'освітній бренд викладача',
     'курс Ілля Літун',
     'як знайти учнів викладачу',
     'блог викладача',

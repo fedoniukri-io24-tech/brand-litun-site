@@ -1,6 +1,6 @@
 # brand-litun-site
 
-Окремий лендинг курсу **«Освітній бренд для викладача»** (Ілля Літун / TURBO EDUCATION).
+Окремий лендинг курсу **«Особистий бренд для викладача»** (Ілля Літун / TURBO EDUCATION).
 
 Standalone Next.js 14 App Router — без звʼязку з основним сайтом `illyalitun.com`.
 

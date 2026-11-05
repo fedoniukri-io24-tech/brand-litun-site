@@ -1,7 +1,7 @@
 export const BRAND = {
   name: 'Ілля Літун',
   ecosystem: 'TURBO EDUCATION',
-  tagline: 'Освітній бренд для викладача',
+  tagline: 'Особистий бренд для викладача',
   role: 'Засновник освітньої екосистеми TURBO EDUCATION, лауреат номінації Forbes 30 до 30',
   phone: '+380 67 000 00 00',
   email: 'hello@turbo.education',

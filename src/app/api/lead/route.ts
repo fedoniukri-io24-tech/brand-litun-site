@@ -7,7 +7,7 @@ const MAX_PHONE = 32
 const MAX_COMMENT = 2000
 const MAX_META = 500
 
-const COURSE_LABEL = 'Освітній бренд для викладача'
+const COURSE_LABEL = 'Особистий бренд для викладача'
 
 function clean(value: unknown, max = 300) {
   if (typeof value !== 'string') return ''
@@ -77,7 +77,7 @@ function buildMessage(payload: {
 
   return [
     `🆕 <b>Заявка з сайту-дубляжу (передзапис)</b>`,
-    `Курс «Освітній бренд для викладача»`,
+    `Курс «Особистий бренд для викладача»`,
     ``,
     `👤 <b>Контакт</b>`,
     line('Імʼя', payload.name),

@@ -94,7 +94,7 @@ function collectUtm() {
 
 const COURSE_SERVICE = {
   slug: 'brend',
-  label: 'Освітній бренд для викладача',
+  label: 'Особистий бренд для викладача',
 } as const
 
 export default function ContactForm({

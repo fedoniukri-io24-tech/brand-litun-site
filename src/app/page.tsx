@@ -16,7 +16,7 @@ export default function HomePage() {
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'Course',
-            name: 'Освітній бренд для викладача',
+            name: 'Особистий бренд для викладача',
             description: BRAND_COURSE.hero.lead,
             provider: {
               '@type': 'Person',
